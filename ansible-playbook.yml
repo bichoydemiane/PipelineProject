@@ -12,15 +12,15 @@
       ignore_errors: yes
 
     - name: remove comingsoon-image
-      command: docker rmi bichoydemiane/comingsoon-page
+      command: docker rmi bichoydemiane/demo:comingsoon-page
       ignore_errors: yes
 
     - name: build docker image using the Dockerfile
-      command: docker build -t bichoydemiane/comingsoon-page .
+      command: docker build -t bichoydemiane/demo:comingsoon-page .
 
     - name: Push Image to dockerhub
-      command: docker push bichoydemiane/comingsoon-page
+      command: docker push bichoydemiane/demo:comingsoon-page
 
     - name: run container
-      command: docker run -d --name web-container -p 5000:80 bichoydemiane/comingsoon-page
+      command: docker run -d --name web-container -p 5000:80 bichoydemiane/demo:comingsoon-page
 
